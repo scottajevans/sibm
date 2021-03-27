@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/sibm/static/css/main.9d5b29c0.chunk.css",
-    "main.js": "/sibm/static/js/main.a9326728.chunk.js",
-    "main.js.map": "/sibm/static/js/main.a9326728.chunk.js.map",
+    "main.css": "/sibm/static/css/main.db4dcbcc.chunk.css",
+    "main.js": "/sibm/static/js/main.0ba69ca2.chunk.js",
+    "main.js.map": "/sibm/static/js/main.0ba69ca2.chunk.js.map",
     "runtime-main.js": "/sibm/static/js/runtime-main.0ceea4cd.js",
     "runtime-main.js.map": "/sibm/static/js/runtime-main.0ceea4cd.js.map",
     "static/js/2.abe66b25.chunk.js": "/sibm/static/js/2.abe66b25.chunk.js",
@@ -10,14 +10,13 @@
     "static/js/3.393da8fa.chunk.js": "/sibm/static/js/3.393da8fa.chunk.js",
     "static/js/3.393da8fa.chunk.js.map": "/sibm/static/js/3.393da8fa.chunk.js.map",
     "index.html": "/sibm/index.html",
-    "static/css/main.9d5b29c0.chunk.css.map": "/sibm/static/css/main.9d5b29c0.chunk.css.map",
-    "static/js/2.abe66b25.chunk.js.LICENSE.txt": "/sibm/static/js/2.abe66b25.chunk.js.LICENSE.txt",
-    "static/media/logo.6ce24c58.svg": "/sibm/static/media/logo.6ce24c58.svg"
+    "static/css/main.db4dcbcc.chunk.css.map": "/sibm/static/css/main.db4dcbcc.chunk.css.map",
+    "static/js/2.abe66b25.chunk.js.LICENSE.txt": "/sibm/static/js/2.abe66b25.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.0ceea4cd.js",
     "static/js/2.abe66b25.chunk.js",
-    "static/css/main.9d5b29c0.chunk.css",
-    "static/js/main.a9326728.chunk.js"
+    "static/css/main.db4dcbcc.chunk.css",
+    "static/js/main.0ba69ca2.chunk.js"
   ]
 }
