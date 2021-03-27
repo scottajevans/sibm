@@ -38,7 +38,7 @@ class App extends Component {
       <link rel="stylesheet" href="//brick.a.ssl.fastly.net/Roboto:400"/>
       <header className="App-header">
         <h1>S.I.B.M.</h1>
-        <h4>For Super Import Business Meeting use only</h4>
+        <h2>For Super Import Business Meeting use only</h2>
         {this.gamesDisplay()}
         <div>
           <Button variant="primary" size="lg" className="next-btn" onClick={this.clickedButton}>Next</Button>
