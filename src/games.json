@@ -1,6 +1,7 @@
-{
-    "skribbl" : {
+[
+    {
         "url" : "https://skribbl.io",
+        "image" : "https://skribbl.io/res/logo.gif",
         "name" : "Skribbl",
         "tags" : [
             "drawing",
@@ -8,8 +9,9 @@
             "multiplayer"
         ]
     },
-    "scattergories" : {
+    {
         "url" : "https://scattergoriesonline.net/new-game.xhtml",
+        "image" : "https://cf.geekdo-images.com/eIL4hvMb7ZPgizc7BZOh-g__opengraph/img/ZmLOFkUY_mlRqGp0S7WFkMTHEk8=/fit-in/1200x630/filters:strip_icc()/pic4994410.jpg",
         "name" : "Scattergories",
         "tags" : [
             "words",
@@ -17,8 +19,9 @@
             "fast-paced"
         ]
     },
-    "rocketcrab" : {
+    {
         "url" : "https://rocketcrab.com",
+        "image" : "https://raw.githubusercontent.com/tannerkrewson/rocketcrab/2411dc0e5700930186dccc91085fec5966daeb9d/public/rocketcrab-logo-text.svg",
         "name" : "RocketCrab",
         "tags" : [
             "drawing",
@@ -26,4 +29,4 @@
             "multiplayer"
         ]
     }
-}
+]
