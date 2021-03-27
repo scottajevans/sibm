@@ -1,18 +1,23 @@
 import './App.css';
+import {Game} from './components/game.js';
+let games = require('./games.json');
 
 function App() {
+  console.log(games)
+  const gamesDisplay = Object.values(games).map((game, index) => {
+    return (<li key={index}>
+      <Game game={game}></Game>
+    </li>)
+  });
+
   return (
     <div className="App">
       <header className="App-header">
         <h1>S.I.B.M.</h1>
         <h4>For Super Import Business Meeting use only</h4>
-        <p>
-          <ul>
-            <li><a href="https://skribbl.io">Skribbl</a></li>
-            <li><a href="https://scattergoriesonline.net/new-game.xhtml">Scattergories</a></li>
-            <li><a href="https://rocketcrab.com">RocketCrab</a></li>
-          </ul>
-        </p>
+        <ul>
+          {gamesDisplay}
+        </ul>
       </header>
     </div>
   );

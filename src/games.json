@@ -1,0 +1,29 @@
+{
+    "skribbl" : {
+        "url" : "https://skribbl.io",
+        "name" : "Skribbl",
+        "tags" : [
+            "drawing",
+            "words",
+            "multiplayer"
+        ]
+    },
+    "scattergories" : {
+        "url" : "https://scattergoriesonline.net/new-game.xhtml",
+        "name" : "Scattergories",
+        "tags" : [
+            "words",
+            "multiplayer",
+            "fast-paced"
+        ]
+    },
+    "rocketcrab" : {
+        "url" : "https://rocketcrab.com",
+        "name" : "RocketCrab",
+        "tags" : [
+            "drawing",
+            "words",
+            "multiplayer"
+        ]
+    }
+}
