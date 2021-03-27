@@ -12,13 +12,17 @@ export class Game extends React.Component {
         })
     }
 
+    getAltText = () => {
+        return `Visit the website ${this.props.game.name}`;
+    }
+
     render() {
         return (
             <div>
                 <h3>{this.props.game.name}</h3>
                 <div>
                     <a href={this.props.game.url}>
-                        <img src={this.props.game.image} className="game-img"></img>
+                        <img src={this.props.game.image} alt={this.getAltText()} className="game-img"></img>
                     </a>
                 </div>
                 <div><p>{this.getTags()}</p></div>
