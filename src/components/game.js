@@ -1,12 +1,14 @@
 import React from 'react';
+import {Tag} from './tag.js';
 
 export class Game extends React.Component {
 
     getTags = () => {
-        console.log("Hello")
-        console.log(this.props.game.tags)
-        return this.props.game.tags.map((tag) => {
-            return <>{tag} </>
+        return this.props.game.tags.map((tag, index) => {
+            let separator = index === this.props.game.tags.length - 1 ? " " : ", ";
+            return (
+                <Tag tag={tag} separator={separator}/>
+            );
         })
     }
 
@@ -19,7 +21,6 @@ export class Game extends React.Component {
                         <img src={this.props.game.image} className="game-img"></img>
                     </a>
                 </div>
-                <div>What is this game?</div>
                 <div><p>{this.getTags()}</p></div>
             </div>
         );

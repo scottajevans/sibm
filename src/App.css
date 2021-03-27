@@ -18,5 +18,9 @@
 }
 
 .game-img {
-  max-height: 200px;
+  height: 200px;
+}
+
+.next-btn {
+  width : 100px;
 }

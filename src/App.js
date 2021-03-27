@@ -1,4 +1,6 @@
 import React, {Component} from 'react';
+import Button from 'react-bootstrap/Button';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 import './App.css';
 import {Game} from './components/game.js';
@@ -33,12 +35,13 @@ class App extends Component {
   render() {
     return (
     <div className="App">
+      <link rel="stylesheet" href="//brick.a.ssl.fastly.net/Roboto:400"/>
       <header className="App-header">
         <h1>S.I.B.M.</h1>
         <h4>For Super Import Business Meeting use only</h4>
         {this.gamesDisplay()}
         <div>
-          <button onClick={this.clickedButton}>Next</button>
+          <Button variant="primary" size="lg" className="next-btn" onClick={this.clickedButton}>Next</Button>
         </div>
       </header>
     </div>
