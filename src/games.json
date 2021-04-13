@@ -28,5 +28,16 @@
             "words",
             "multiplayer"
         ]
+    },
+    {
+        "url" : "https://codenames.game/",
+        "image" : "https://cdn.pastemagazine.com/www/articles/2020/11/25/codenames_game_main.jpg",
+        "name" : "Code Names",
+        "tags" : [
+            "multiplayer",
+            "strategic",
+            "words",
+            "team vs team"
+        ]
     }
 ]
