@@ -1,4 +1,5 @@
 import React from 'react';
+
 import {Tag} from './tag.js';
 
 export class Game extends React.Component {
@@ -7,7 +8,7 @@ export class Game extends React.Component {
         return this.props.game.tags.map((tag, index) => {
             let separator = index === this.props.game.tags.length - 1 ? " " : ", ";
             return (
-                <Tag tag={tag} separator={separator}/>
+                <Tag tag={tag} separator={separator} key={index}/>
             );
         })
     }
@@ -18,7 +19,7 @@ export class Game extends React.Component {
 
     render() {
         return (
-            <div>
+            <div style={{position: 'absolute', width: '100%'}}>
                 <h3>{this.props.game.name}</h3>
                 <div>
                     <a href={this.props.game.url}>

@@ -1,6 +1,7 @@
 .App {
   background-color: #282c34;
   text-align: center;
+  overflow: hidden;
 }
 
 .App-header {
@@ -22,7 +23,12 @@
 }
 
 .next-btn {
-  width : 100px;
+  width : 80px;
+}
+
+.randomise-btn {
+  margin-left: 30px;
+  width : 140px;
 }
 
 h1 {
@@ -39,4 +45,59 @@ h3 {
 
 p {
   font-size: 18px;
+}
+
+/* appear on page load */
+.fade-appear {
+  opacity: 0;
+  z-index: 1;
+}
+.fade-appear.fade-appear-active {
+  opacity: 1;
+  transition: opacity 300ms linear;
+}
+
+/* enter */
+.fade-enter {
+  opacity: 0;
+  z-index: 1;
+}
+.fade-enter.fade-enter-active {
+  opacity: 1;
+  transition: opacity 400ms linear 500ms;
+}
+
+/* exit */
+.fade-exit {
+  opacity: 1;
+}
+.fade-exit.fade-exit-active {
+  opacity: 0;
+  transition: opacity 400ms linear;
+}
+.fade-exit-done {
+  opacity: 0;
+}
+
+.slide-enter {
+  opacity: 0;
+  transform: scale(0.97) translateX(40%);
+}
+.slide-enter.slide-enter-active {
+  opacity: 1;
+  transform: scale(1) translateX(0);
+  transition: opacity 500ms linear 500ms, transform 500ms ease-in-out 500ms;
+}
+
+.slide-exit {
+  opacity: 1;
+  transform: scale(1) translateX(0);
+}
+.slide-exit.slide-exit-active {
+  opacity: 0;
+  transform: translateX(-50%);
+  transition: opacity 500ms linear, transform 500ms ease;
+}
+.slide-exit-done {
+  opacity: 0;
 }
