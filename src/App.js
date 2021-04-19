@@ -17,7 +17,11 @@ class App extends Component {
     this.state = {
       gamePos : 0,
       currentGame : games[0],
-      games : games
+      games : games,
+      currentAnimation : "slide",
+      buttonsEnabled : true,
+      enterDelay : 800,
+      exitDelay : 400
     }
   }
 
@@ -31,9 +35,41 @@ class App extends Component {
 
   clickedRandomise = () => {
     this.setState({
+      currentAnimation : "slip",
+      enterDelay : 400,
+      exitDelay : 200,
+      buttonsEnabled : false,
       games : games.sort(() => 0.5 - Math.random()),
       currentGame : games[0]
     })
+    setTimeout(() => {
+      this.setState({
+        currentGame : games[1]
+      });
+      setTimeout(() => {
+        this.setState({
+          currentGame : games[2],
+        });
+        setTimeout(() => {
+          this.setState({
+            currentGame : games[3]
+          });
+          setTimeout(() => {
+            this.setState({
+              currentGame : games[4]
+            });
+            setTimeout(() => {
+              this.setState({
+                buttonsEnabled : true,
+                enterDelay : 800,
+                exitDelay : 400,
+                currentAnimation : "slide"
+              })
+            }, 400)
+          }, 400)
+        }, 400)
+      }, 400);
+    }, 400);
   }
 
   render() {
@@ -50,20 +86,23 @@ class App extends Component {
           <header className="App-header">
             <h1>S.I.B.M.</h1>
             <h2>For Super Import Business Meeting use only</h2>
+          </header>
+          <body className="App-body">
             <TransitionGroup>
               <CSSTransition
+              ref={this.gameRef}
               key={this.state.currentGame.name}
-              timeout={{ enter: 1000, exit: 500 }}
-              classNames="slide"
+              timeout={{ enter: this.state.enterDelay, exit: this.state.exitDelay }}
+              classNames={this.state.currentAnimation}
               >
                 <Game game={this.state.currentGame} />
               </CSSTransition>
             </TransitionGroup>
             <div style={{'margin-top': '300px'}}>
-              <Button variant="primary" size="lg" className="next-btn" onClick={this.clickedNext}>Next</Button>
-              <Button variant="primary" size="lg" className="randomise-btn" onClick={this.clickedRandomise}>Randomize</Button>
+              <Button variant="primary" size="lg" className="next-btn" onClick={this.clickedNext} disabled={!this.state.buttonsEnabled}>Next</Button>
+              <Button variant="primary" size="lg" className="randomise-btn" onClick={this.clickedRandomise} disabled={!this.state.buttonsEnabled}>Randomize</Button>
             </div>
-          </header>
+          </body>
         </div>
       </CSSTransition>
     </div>
