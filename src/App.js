@@ -12,17 +12,29 @@ class App extends Component {
   constructor(){
     super();
 
-    games.sort(() => 0.5 - Math.random());
-
     this.state = {
+      loading : true,
       gamePos : 0,
-      currentGame : games[0],
-      games : games,
       currentAnimation : "slide",
       buttonsEnabled : true,
       enterDelay : 800,
       exitDelay : 400
     }
+  }
+
+  componentDidMount() {
+    fetch('https://scottajevans.github.io/sibmdata/data.json')
+      .then(response => response.json())
+      .then(data => {
+        console.log(data);
+        data.sort(() => 0.5 - Math.random());
+        this.setState({
+          loading : false,
+          games : data,
+          currentGame : data[0]
+        });
+      });
+        
   }
 
   clickedNext = () => {
@@ -76,7 +88,7 @@ class App extends Component {
     return (
     <div className="App">
       <link rel="stylesheet" href="//brick.a.ssl.fastly.net/Roboto:400"/>
-      <CSSTransition
+      { !this.state.loading && <CSSTransition
           in={true}
           appear={true}
           timeout={800}
@@ -98,13 +110,13 @@ class App extends Component {
                 <Game game={this.state.currentGame} />
               </CSSTransition>
             </TransitionGroup>
-            <div style={{'margin-top': '300px'}}>
+            <div style={{'marginTop': '300px'}}>
               <Button variant="primary" size="lg" className="next-btn" onClick={this.clickedNext} disabled={!this.state.buttonsEnabled}>Next</Button>
               <Button variant="primary" size="lg" className="randomise-btn" onClick={this.clickedRandomise} disabled={!this.state.buttonsEnabled}>Randomize</Button>
             </div>
           </body>
         </div>
-      </CSSTransition>
+      </CSSTransition> }
     </div>
     );
   }
