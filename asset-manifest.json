@@ -1,25 +1,25 @@
 {
   "files": {
-    "main.css": "/sibm/static/css/main.5df9275a.chunk.css",
-    "main.js": "/sibm/static/js/main.a68248a4.chunk.js",
-    "main.js.map": "/sibm/static/js/main.a68248a4.chunk.js.map",
-    "runtime-main.js": "/sibm/static/js/runtime-main.3c4f08cd.js",
-    "runtime-main.js.map": "/sibm/static/js/runtime-main.3c4f08cd.js.map",
-    "static/css/2.4c97ca4f.chunk.css": "/sibm/static/css/2.4c97ca4f.chunk.css",
-    "static/js/2.f8cea6dd.chunk.js": "/sibm/static/js/2.f8cea6dd.chunk.js",
-    "static/js/2.f8cea6dd.chunk.js.map": "/sibm/static/js/2.f8cea6dd.chunk.js.map",
-    "static/js/3.254e5365.chunk.js": "/sibm/static/js/3.254e5365.chunk.js",
-    "static/js/3.254e5365.chunk.js.map": "/sibm/static/js/3.254e5365.chunk.js.map",
+    "main.css": "/sibm/static/css/main.ef9e6b82.chunk.css",
+    "main.js": "/sibm/static/js/main.77260ff8.chunk.js",
+    "main.js.map": "/sibm/static/js/main.77260ff8.chunk.js.map",
+    "runtime-main.js": "/sibm/static/js/runtime-main.3b058c54.js",
+    "runtime-main.js.map": "/sibm/static/js/runtime-main.3b058c54.js.map",
+    "static/css/2.c4e73993.chunk.css": "/sibm/static/css/2.c4e73993.chunk.css",
+    "static/js/2.97ccaf58.chunk.js": "/sibm/static/js/2.97ccaf58.chunk.js",
+    "static/js/2.97ccaf58.chunk.js.map": "/sibm/static/js/2.97ccaf58.chunk.js.map",
+    "static/js/3.d816a58f.chunk.js": "/sibm/static/js/3.d816a58f.chunk.js",
+    "static/js/3.d816a58f.chunk.js.map": "/sibm/static/js/3.d816a58f.chunk.js.map",
     "index.html": "/sibm/index.html",
-    "static/css/2.4c97ca4f.chunk.css.map": "/sibm/static/css/2.4c97ca4f.chunk.css.map",
-    "static/css/main.5df9275a.chunk.css.map": "/sibm/static/css/main.5df9275a.chunk.css.map",
-    "static/js/2.f8cea6dd.chunk.js.LICENSE.txt": "/sibm/static/js/2.f8cea6dd.chunk.js.LICENSE.txt"
+    "static/css/2.c4e73993.chunk.css.map": "/sibm/static/css/2.c4e73993.chunk.css.map",
+    "static/css/main.ef9e6b82.chunk.css.map": "/sibm/static/css/main.ef9e6b82.chunk.css.map",
+    "static/js/2.97ccaf58.chunk.js.LICENSE.txt": "/sibm/static/js/2.97ccaf58.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.3c4f08cd.js",
-    "static/css/2.4c97ca4f.chunk.css",
-    "static/js/2.f8cea6dd.chunk.js",
-    "static/css/main.5df9275a.chunk.css",
-    "static/js/main.a68248a4.chunk.js"
+    "static/js/runtime-main.3b058c54.js",
+    "static/css/2.c4e73993.chunk.css",
+    "static/js/2.97ccaf58.chunk.js",
+    "static/css/main.ef9e6b82.chunk.css",
+    "static/js/main.77260ff8.chunk.js"
   ]
 }
