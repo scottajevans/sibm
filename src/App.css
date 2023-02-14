@@ -9,7 +9,7 @@ html, body, #root, .App {
 }
 
 .App-header {
-  padding-top: 100px;
+  padding-top: 50px;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
@@ -19,7 +19,6 @@ html, body, #root, .App {
 .App-body {
   background-color: #282c34;
   text-align: center;
-  padding-top: 100px;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
@@ -44,7 +43,7 @@ html, body, #root, .App {
 }
 
 h1 {
-  font-size: 150px;
+  font-size: 100px;
 }
 
 h2 {

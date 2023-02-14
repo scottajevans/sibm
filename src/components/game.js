@@ -1,33 +1,32 @@
 import React from 'react';
 
-import {Tag} from './tag.js';
+import { Tag } from './tag.js';
 
-export class Game extends React.Component {
+export const Game = ({
+  game
+}) => {
+  const getTags = () => {
+    return game.tags.map((tag, index) => {
+      const separator = index === game.tags.length - 1 ? " " : ", ";
+      return (
+        <Tag tag={tag} separator={separator} key={index} />
+      );
+    })
+  }
 
-    getTags = () => {
-        return this.props.game.tags.map((tag, index) => {
-            let separator = index === this.props.game.tags.length - 1 ? " " : ", ";
-            return (
-                <Tag tag={tag} separator={separator} key={index}/>
-            );
-        })
-    }
+  const getAltText = () => {
+    return `Visit the website ${game.name}`;
+  }
 
-    getAltText = () => {
-        return `Visit the website ${this.props.game.name}`;
-    }
-
-    render() {
-        return (
-            <div style={{position: 'absolute', width: '100%'}}>
-                <h3>{this.props.game.name}</h3>
-                <div>
-                    <a href={this.props.game.url}>
-                        <img src={this.props.game.image} alt={this.getAltText()} className="game-img"></img>
-                    </a>
-                </div>
-                <div><p>{this.getTags()}</p></div>
-            </div>
-        );
-    }
+  return (
+    <div style={{ position: 'absolute', width: '100%' }}>
+      <h3>{game.name}</h3>
+      <div>
+        <a href={game.url}>
+          <img src={game.image} alt={getAltText()} className="game-img"></img>
+        </a>
+      </div>
+      <div><p>{getTags()}</p></div>
+    </div>
+  );
 }

@@ -1,99 +1,74 @@
-import React, {Component} from 'react';
+import React, { useEffect, useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 
 import './App.css';
-import {Game} from './components/game.js';
+import { Game } from './components/game.js';
 
-let games = require('./games.json');
+let localGames = require('./games.json');
 
-class App extends Component {
-  constructor(){
-    super();
+export const App = () => {
+  const [isLoading, setIsLoading] = useState(true);
+  const [gamePos, setGamePos] = useState(0);
+  const [buttonsEnabled, setButtonsEnabled] = useState(true);
+  const [games, setGames] = useState(localGames);
+  const [currentGame, setCurrentGame] = useState(localGames[0]);
 
-    this.state = {
-      loading : true,
-      gamePos : 0,
-      currentAnimation : "slide",
-      buttonsEnabled : true,
-      enterDelay : 800,
-      exitDelay : 400
-    }
-  }
+  let currentAnimation = "slide";
+  let enterDelay = 800;
+  let exitDelay = 400;
 
-  componentDidMount() {
-    fetch('https://scottajevans.github.io/sibmdata/data.json')
+  useEffect(() => {
+    fetch('https:scottajevans.github.io/sibmdata/data.json')
       .then(response => response.json())
       .then(data => {
-        console.log(data);
         data.sort(() => 0.5 - Math.random());
-        this.setState({
-          loading : false,
-          games : data,
-          currentGame : data[0]
-        });
+        setIsLoading(false);
+        setGames(data);
+        setCurrentGame(data[0]);
       });
-        
+  }, [])
+
+  const clickedNext = () => {
+    const nextPos = gamePos === games.length - 1 ? 0 : gamePos + 1;
+    setGamePos(nextPos);
+    setCurrentGame(games[nextPos]);
   }
 
-  clickedNext = () => {
-    let nextPos = this.state.gamePos === games.length - 1 ? 0 : this.state.gamePos + 1;
-    this.setState({
-      gamePos : nextPos,
-      currentGame : games[nextPos]
-    })
-  }
+  const clickedRandomise = () => {
+    setButtonsEnabled(false);
+    currentAnimation = "slip";
+    enterDelay = 400;
+    exitDelay = 200;
 
-  clickedRandomise = () => {
-    this.setState({
-      currentAnimation : "slip",
-      enterDelay : 400,
-      exitDelay : 200,
-      buttonsEnabled : false,
-      games : games.sort(() => 0.5 - Math.random()),
-      currentGame : games[0]
-    })
-    setTimeout(() => {
-      this.setState({
-        currentGame : games[1]
-      });
+    for (let i = 0; i < 4; i++) {
       setTimeout(() => {
-        this.setState({
-          currentGame : games[2],
-        });
-        setTimeout(() => {
-          this.setState({
-            currentGame : games[3]
-          });
-          setTimeout(() => {
-            this.setState({
-              currentGame : games[4]
-            });
-            setTimeout(() => {
-              this.setState({
-                buttonsEnabled : true,
-                enterDelay : 800,
-                exitDelay : 400,
-                currentAnimation : "slide"
-              })
-            }, 400)
-          }, 400)
-        }, 400)
-      }, 400);
-    }, 400);
+        setCurrentGame(games[i]);
+      }, i * 400);
+    }
+
+    setGames(games.sort(() => 0.5 - Math.random()));
+    setCurrentGame(games[0]);
+
+    setButtonsEnabled(true)
+    enterDelay = 800;
+    exitDelay = 400;
+    currentAnimation = "slide"
   }
 
-  render() {
-    return (
+  return (
     <div className="App">
-      <link rel="stylesheet" href="//brick.a.ssl.fastly.net/Roboto:400"/>
-      { !this.state.loading && <CSSTransition
-          in={true}
-          appear={true}
-          timeout={800}
-          classNames="fade"
-        >
+      <link rel="stylesheet" href="brick.a.ssl.fastly.net/Roboto:400" />
+      {isLoading ? (
+        <div>Games are loading</div>
+      ) : (
+      <CSSTransition
+        in={true}
+        appear={true}
+        timeout={800}
+        classNames="fade"
+      >
         <div>
           <header className="App-header">
             <h1>S.I.B.M.</h1>
@@ -102,24 +77,26 @@ class App extends Component {
           <body className="App-body">
             <TransitionGroup>
               <CSSTransition
-              ref={this.gameRef}
-              key={this.state.currentGame.name}
-              timeout={{ enter: this.state.enterDelay, exit: this.state.exitDelay }}
-              classNames={this.state.currentAnimation}
+                ref={React.createRef()}
+                key={currentGame.name}
+                timeout={{ enter: enterDelay, exit: exitDelay }}
+                classNames={currentAnimation}
               >
-                <Game game={this.state.currentGame} />
+                <Game game={currentGame} />
               </CSSTransition>
             </TransitionGroup>
-            <div style={{'marginTop': '300px'}}>
-              <Button variant="primary" size="lg" className="next-btn" onClick={this.clickedNext} disabled={!this.state.buttonsEnabled}>Next</Button>
-              <Button variant="primary" size="lg" className="randomise-btn" onClick={this.clickedRandomise} disabled={!this.state.buttonsEnabled}>Randomize</Button>
+            <div style={{
+              'marginTop': '300px'
+            }}>
+              <Button variant="primary" size="lg" className="next-btn" onClick={clickedNext} disabled={!buttonsEnabled}>Next</Button>
+              <Button variant="primary" size="lg" className="randomise-btn" onClick={clickedRandomise} disabled={!buttonsEnabled}>Randomize</Button>
             </div>
           </body>
         </div>
-      </CSSTransition> }
+      </CSSTransition>
+      )}
     </div>
-    );
-  }
+  );
 }
 
 export default App;

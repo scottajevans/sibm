@@ -1,7 +1,7 @@
 [
     {
         "url" : "https://skribbl.io",
-        "image" : "https://skribbl.io/res/logo.gif",
+        "image" : "https://skribbl.io/img/thumbnail.png",
         "name" : "Skribbl",
         "tags" : [
             "drawing",
