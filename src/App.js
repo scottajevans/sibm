@@ -20,7 +20,7 @@ export const App = () => {
   let exitDelay = 400;
 
   useEffect(() => {
-    fetch('data.json')
+    fetch('https://scottajevans.github.io/sibmdata/data.json')
       .then(response => response.json())
       .then(data => {
         data.sort(() => 0.5 - Math.random());
